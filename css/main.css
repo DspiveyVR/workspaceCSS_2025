@@ -1,0 +1,36 @@
+/*
+    00: css variable
+    01: color 
+    02: layout 
+    03: typography
+    04: transition, animation, selector practice
+    05: any exploration
+*/
+
+/** 00 css variable */
+
+:root {
+    --body-color:rgb(234, 191, 255);
+    --page-color:rgba(251, 255, 233, 0.786);
+    --sidebar-color:rgb(232, 255, 180);
+    --h1-color: rgb(69, 44, 182);
+}
+
+/** 01 color */
+body {
+    background-color: var(--body-color);
+}
+
+#zen-intro {
+    background-color: var(--page-color);
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+}
+
+/** Try h1 **/
+
+h1 {
+    color: var(--h1-color);
+}
