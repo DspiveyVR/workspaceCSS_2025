@@ -10,10 +10,13 @@
 /** 00 css variable */
 
 :root {
-    --body-color:rgb(234, 191, 255);
-    --page-color:rgba(251, 255, 233, 0.786);
-    --sidebar-color:rgb(232, 255, 180);
+    --body-color: rgb(173, 159, 152);
+    --page-color: rgba(251, 255, 233, 0);
+    --sidebar-color: rgb(232, 255, 180);
     --h1-color: rgb(69, 44, 182);
+    --page-width: 15vw;
+    --page-top: 85vh;
+    --bottom-bar-height: 15vh;
 }
 
 /** 01 color */
@@ -33,4 +36,246 @@ body {
 
 h1 {
     color: var(--h1-color);
+}
+
+
+div.explanation {
+    left: 0;
+    top: var(--page-top);
+}
+
+div.requirements {
+    left: 15vw;
+    top: var(--page-top);
+}
+
+
+div.benefits {
+    left: 30vw;
+    top: var(--page-top);
+}
+
+
+div.participation {
+    left: 45vw;
+    top: var(--page-top);
+}
+
+div.explanation h3,
+div.requirements h3,
+div.benefits h3,
+div.participation h3 {
+    margin-top: -10%;
+    margin-right: 2%;
+    border: 3px outset black;
+    background-color: lightcoral;
+    padding: 1px;
+}
+
+.sidebar {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 10%;
+}
+
+div.extra2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: var(--bottom-bar-height);
+    background-color: burlywood;
+}
+
+div.extra1 {
+    position: fixed;
+    left: 41%;
+    width: 25%;
+    height: 82vh;
+    background-color: beige;
+    background-image: url(../img/newspaper2.jpg);
+    z-index: -1;
+    transform: rotate(28deg) translate(10px);
+}
+
+section.intro {
+    position: fixed;
+    top: 3%;
+    left: 41%;
+    width: 25%;
+    height: 82vh;
+    font-size: 10pt;
+    background-image: url(../img/newspaper3.jpg);
+    transform: rotate(-8deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+section.intro:hover {
+    transform: rotate(0deg) translate(8px, -25px);
+}
+
+section.intro h3~p {
+    text-transform: capitalize;
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
+
+section.intro h3:hover~p {
+    opacity: 0;
+}
+
+@font-face {
+    font-family: 'myfont';
+    src: url('../fonts/RubikBurned-Regular.ttf');
+}
+
+header h1 {
+    font-family: 'myfont', 'monospace';
+    font-weight: 100;
+    font-size: 2em;
+    letter-spacing: -4px;
+    line-height: 1em;
+    text-transform: none;
+}
+
+header h2 {
+    font-family: 'monospace';
+    font-weight: 10;
+    font-size: 1em;
+    letter-spacing: -1px;
+    line-height: 1em;
+    text-transform: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+#design-selection h3 {
+    visibility: hidden;
+}
+
+
+#design-archives h3 {
+    visibility: hidden;
+}
+
+#zen-resources h3 {
+    visibility: hidden;
+}
+
+a:hover {
+    font-size: 14pt;
+}
+
+h3:hover {
+    color: bisque;
+}
+
+div.explanation,
+div.requirements,
+div.benefits,
+div.participation {
+    position: fixed;
+    width: var(--page-width);
+    top: var(--page-top);
+    height: var(--page-top);
+    background-image: url(../img/newspaper1.jpg);
+    font-size: 8pt;
+    transition: top 0.5s ease-in-out;
+}
+
+div.explanation:hover,
+div.requirements:hover,
+div.benefits:hover,
+div.participation:hover {
+    top: 15vh;
+    height: 75vh;
+}
+
+div.explanation h3,
+div.requirements h3,
+div.benefits h3,
+div.participation h3 {
+    border-radius: 4px;
+}
+
+ul {
+    list-style-image: url(../img/star.png);
+}
+
+section.intro {
+    background-image: linear-gradient(0deg, rgb(252, 157, 252), rgb(48, 42, 50));
+    animation: changeColor 1s infinite running ease-in-out;
+}
+
+@keyframes changeColor {
+    from {background-image: linear-gradient(45deg, rgb(0, 150, 160), rgb(193, 175, 199));}
+    25% {background-image: linear-gradient(85deg, rgb(0, 0, 0), rgb(255, 255, 255));}
+    to {background-image: linear-gradient(220deg, rgb(128, 128, 128), rgb(255, 129, 129));}
+}
+
+footer {
+    position: fixed;
+    top: 95vh;
+    left: 10vw;
+    animation: backAndForth 2s infinite alternate ease-in-out;
+    z-index: 2;
+}
+
+@keyframes backAndForth {
+    from {left: 10vw}
+    25% {left: 50vw}
+    to {left: 80vw}
+}
+
+div{
+  background-color:  hsla(200,50%,70%,0.3);
+}
+
+.wrapper {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100px  repeat(2, 1fr) 100px;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.one{
+  grid-column: 2/4;
+  grid-row: 2/4;
+}
+
+.two{
+  grid-column: 1/ 4;
+  grid-row: 1/2;
+}
+
+.three {
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+
+.four {
+  grid-column: 4/5;
+  grid-row: 1/3;
+}
+
+.five {
+  grid-column: 1/4;
+  grid-row: 4/5;
+}
+
+.six {
+  grid-column: 3/5;
+  grid-row: 3/5;
+}
+
+aside.sidebar {
+    clip-path: polygon(0 0, 0 60%, 50% 70%, 90% 40%, 90% 12%);
 }
